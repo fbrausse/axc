@@ -43,7 +43,7 @@ CFLAGS += $(HEADERS) $(PKGCFG_C) -std=c11 -g -Wall -Wextra -Wpedantic \
 CPPFLAGS += -D_XOPEN_SOURCE=700 -D_BSD_SOURCE -D_POSIX_SOURCE -D_GNU_SOURCE -D_DEFAULT_SOURCE
 TESTFLAGS=$(HEADERS) $(PKGCFG_C) -g -O0 --coverage
 PICFLAGS=-fPIC $(CFLAGS)
-LDFLAGS += -pthread -ldl $(PKGCFG_L) $(AX_PATH) -lm
+LDFLAGS += -pthread -ldl $(PKGCFG_L) $(AX_PATH) -lm -lprotobuf-c
 LDFLAGS_T= -lcmocka $(LDFLAGS)
 
 all: $(BDIR)/libaxc.a
